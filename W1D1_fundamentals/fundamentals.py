@@ -65,6 +65,9 @@ doggo2 = {
     "is_a_good_girl" : True
 }
 
+doggo2['fav_toy'] = "stuffed 🦆"
+print("🐶🐶🐶🐶", doggo2)
+
 if "age" in doggo2:
     print(f"⭐⭐⭐ found age with the name: {doggo2['name']}")
 else:
@@ -89,5 +92,5 @@ awesome_doggos = [doggo1, doggo2]
 
 # Tuples
 dog = ('Bruce', 'cocker spaniel', 19, False)
-print(dog[0])		# output: Bruce
-dog[1] = 'dachshund'	# ERROR: cannot be modified ('tuple' object does not support item assignment)
+# print(dog[0])		# output: Bruce
+# dog[1] = 'dachshund'	# ERROR: cannot be modified ('tuple' object does not support item assignment)
