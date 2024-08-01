@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+<body>
+    <h2>list</h2>
+    <!-- {{zoo}} -->
+
+    {# loop over the zoo list #}
+    {% for one_animal in zoo %}
+        {% if one_animal['number'] <= 1 %}
+        <li>there is {{one_animal['number']}} {{one_animal["name"]}} in the zoo</li>
+        {% else %}
+
+        <li>there are {{one_animal['number']}} {{one_animal["name"]}} in the zoo</li>
+        {% endif %}
+
+    {% endfor %}
+
+    {# jinja filters #}
+    <h4> there are {{zoo|length}} animals in the zoo</h4>
+
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>one</th>
+                <th>two</th>
+                <th>three</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>45</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

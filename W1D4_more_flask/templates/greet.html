@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greet</title>
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+
+<body>
+    {# this is a jinja comment #}
+    <h2>hello 🎈🎈🎈</h2>
+    <p class="blue">my name is {{name}} and i am {{age}} years old</p>
+    <hr>
+
+    <!-- linking an image -->
+    <img src="{{ url_for('static', filename='images/quote.png') }}" width="400">
+
+    {% for i in range(times) : %}
+        {% if i % 5 == 0: %}
+            <p>🎈🎈🎈🎈</p>
+        {% endif %}
+
+        <p>{{i}} - Hello {{name}}</p>
+    {% endfor %}
+
+    <!-- linking a javascript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+</body>
+
+</html>
