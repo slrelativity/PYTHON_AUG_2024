@@ -30,7 +30,7 @@ class MySQLConnection:
                 elif query.lower().find("select") >= 0:
                     # SELECT queries will return the data from the database as a LIST OF DICTIONARIES
                     result = cursor.fetchall()
-                    return result # [{}, {}, {}]
+                    return result # [{}, {}, {}] [{}]
                 else:
                     # UPDATE and DELETE queries will return nothing
                     self.connection.commit()

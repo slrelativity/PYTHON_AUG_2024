@@ -10,12 +10,25 @@
     <div class="container">
 
         <h1>All the Dogs 🐶</h1>
+        <p>
+            <a href="/dogs/create_page">add a dog to shelter</a>
+        </p>
         all_dogs: {{ all_dogs }}
         <hr>
 
         {% for one_dog in all_dogs :%}
-            <li>{{one_dog.name}} is a <span style="color: {{one_dog.color}}">{{one_dog.color}}</span> 
-                {{one_dog.breed}} and is {{one_dog.age}} years old</li>
+            <li>
+                <a href="/dogs/{{one_dog.id}}">
+
+                    {{one_dog.name}}
+                </a>
+                
+                
+                is a <span style="color: {{one_dog.color}}">{{one_dog.color}}</span> 
+                {{one_dog.breed}} and is {{one_dog.age}} years old
+            
+                - <a href="/dogs/{{one_dog.id}}/update">edit</a>
+            </li>
         {% endfor %}
         
         
