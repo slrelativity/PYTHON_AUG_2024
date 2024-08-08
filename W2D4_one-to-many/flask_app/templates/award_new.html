@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>award a doggo a prize</title>
+</head>
+<body>
+    <h2>award a doggo a prize 🏆</h2>
+    <a href="/">home</a>
+    <hr>
+
+    <form action="/awards/create", method="post">
+        <p>
+            title:
+            <input name="title">
+        </p>
+        {{all_dogs}}
+        <p>
+            <select name="dog_id">
+                {% for winning_dog in all_dogs : %}
+                    <option value="{{winning_dog.id}}">{{winning_dog.name}}</option>
+                {% endfor %}
+           
+              </select>
+        </p>
+        
+        <input type="submit" value="give award">
+
+    </form>
+
+</body>
+</html>
