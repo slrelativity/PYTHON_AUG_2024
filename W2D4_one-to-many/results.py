@@ -27,3 +27,35 @@
         "updated_at": datetime.datetime(2024, 8, 7, 10, 32, 45),
     },
 ]
+
+# -----------get one dog with awards
+[
+    {
+        "id": 6,
+        "name": "Spot",
+        "age": 2,
+        "breed": "lab",
+        "color": "brown",
+        "created_at": datetime.datetime(2024, 8, 8, 10, 46, 28),
+        "updated_at": datetime.datetime(2024, 8, 8, 10, 46, 28),
+        "awards.id": 1,
+        "awards.created_at": datetime.datetime(2024, 8, 8, 10, 55, 3),
+        "awards.updated_at": datetime.datetime(2024, 8, 8, 10, 55, 3),
+        "title": "most cowardly",
+        "dog_id": 6,
+    },
+    {
+        "id": 6,
+        "name": "Spot",
+        "age": 2,
+        "breed": "lab",
+        "color": "brown",
+        "created_at": datetime.datetime(2024, 8, 8, 10, 46, 28),
+        "updated_at": datetime.datetime(2024, 8, 8, 10, 46, 28),
+        "awards.id": 2,
+        "awards.created_at": datetime.datetime(2024, 8, 8, 11, 22, 59),
+        "awards.updated_at": datetime.datetime(2024, 8, 8, 11, 22, 59),
+        "title": "best kisser",
+        "dog_id": 6,
+    },
+]

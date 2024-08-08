@@ -1,12 +1,15 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.dog_model import Dog
+from flask_app.models.award_model import Award
+
 
 
 # ============ READ ALL ==========
 @app.route("/")
 def index():
     all_dogs = Dog.get_all()
+    all_awards = Award.all_awards()
     return render_template("dashboard.html", all_dogs=all_dogs)
 
 
@@ -52,3 +55,13 @@ def update_dog_action(id):
     }
     Dog.update(data)
     return redirect(f"/dogs/{id}")
+
+
+# ----------- DELETE ACTION -----------------
+@app.route("/dogs/<int:id>/delete")
+def adopt_doggo(id):
+    data = {
+        'id' : id
+    }
+    Dog.delete(data)
+    return redirect("/")

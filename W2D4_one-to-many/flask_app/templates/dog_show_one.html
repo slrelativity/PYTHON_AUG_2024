@@ -7,6 +7,12 @@
 </head>
 <body>
     <h2>here is your doggo: 🐕</h2>
-    {{this_dog.name}} is a cool {{this_dog.breed}}
+    {{this_dog.name}} is a cool {{this_dog.breed}} and they have {{this_dog.list_of_awards|length}} awards
+    <hr>
+    <h4>all the awards {{this_dog.name}} has</h4>
+
+    {% for one_award in this_dog.list_of_awards :%}
+        <li>{{one_award.title}}</li>
+    {% endfor %}
 </body>
 </html>

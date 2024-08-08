@@ -27,4 +27,17 @@ SET
     color= 'blue'
 WHERE id = 4;
 
+-- get all the awards
+SELECT * FROM awards;
+
+-- show me a dog's awards
+SELECT * FROM dogs 
+LEFT JOIN awards
+ON dogs.id = awards.dog_id
+WHERE dogs.id = 6;
+
+-- all the awards and recipient 
+SELECT * FROM awards
+LEFT JOIN dogs
+ON awards.dog_id = dogs.id;
 
