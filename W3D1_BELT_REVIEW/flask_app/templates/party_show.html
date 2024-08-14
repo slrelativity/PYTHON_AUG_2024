@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single party 🥳</title>
+</head>
+<body>
+    {{this_party}}
+    <h1>{{this_party.what}}</h1>
+    <a href="/dashboard">home</a>
+    <p>
+        posted by?? {{this_party.planner.first_name}}
+    </p>
+    <p>
+        All ages Welcomed? <br>
+        {% if this_party.all_ages == 1 :%}
+            yes!
+        {% else %}
+            NO!
+        {% endif %}
+
+    </p>
+</body>
+</html>

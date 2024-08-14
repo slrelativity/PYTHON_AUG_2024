@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party EDIT</title>
+</head>
+<body>
+    <h2>EDIT party</h2>
+
+    <p>{{this_party}}</p>
+
+    <a href="/dashboard">home</a>
+    <div>
+        {% for message in get_flashed_messages() %} <!-- loop through the messages -->
+            <p style="color: red">{{message}}</p> <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    </div>
+
+    <form action="/parties/update" method="post">
+        <input type="hidden" name="id" value="{{this_party.id}}">
+        <div>
+            What:
+            <input name="what" value="{{this_party.what}}">
+        </div>
+        <div>
+            where:
+            <input name="location" value="{{this_party.location}}">
+        </div>
+        <div>
+            date:
+            <input type="date" name="date" value="{{this_party.date}}">
+        </div>
+        <div>
+            all ages: <br>
+            yes
+            <input type='radio' value="1" name="all_ages" 
+                {% if this_party.all_ages == 1 :%}
+                    checked
+                {% endif %}
+            >
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            no
+            <input type='radio' value="0" name="all_ages" 
+                {% if this_party.all_ages == 0 :%}
+                    checked
+                {% endif %}
+            >
+
+        </div>
+        <div>
+            description:
+            <textarea name="description">{{this_party.description}}</textarea>
+        </div>
+
+        <p></p>
+        <input type="submit" value="Add party">
+
+    </form>
+</body>
+</html>

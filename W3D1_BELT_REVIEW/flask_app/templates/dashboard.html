@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>welcome user_id: {{session.user_id}}</h2>
+    <p>hello you are: {{logged_user.first_name}}</p>
+    <a href="/parties/new">CREATE A PARTY</a>
+    <a href="/logout">LOG OUT</a>
+    <hr>
+    <p>
+        {{all_parties}}
+    </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>What</th>
+                <th>location</th>
+                <th>Date</th>
+                <th>All ages</th>
+                <th>posted by</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for one_party in all_parties : %}
+            <tr>
+                <td>{{one_party.what}}</td>
+                <td>{{one_party.location}}</td>
+                <td>{{one_party.date}}</td>
+                <td>{{one_party.all_ages}}</td>
+                <td>{{one_party.planner.first_name}}</td>
+                <td>
+                    <a href="/parties/{{one_party.id}}">view</a>
+                    {% if session['user_id'] == one_party.planner.id : %}
+                        <a href="/parties/{{one_party.id}}/edit">edit</a>
+                        <a href="/parties/{{one_party.id}}/delete">cancel</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
